@@ -1,0 +1,42 @@
+---
+- name: Include OS-specific variables
+  tags: grub2
+  include_vars: "{{ item }}"
+  with_first_found:
+    - files:
+        - "{{ ansible_os_family }}-{{ ansible_distribution_major_version }}.yml"
+        - "{{ ansible_os_family }}.yml"
+      skip: true
+
+- name: Install dependencies
+  tags: grub2
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ grub_dependencies + grub_extra_dependencies }}"
+
+- name: Remove unwanted dependencies
+  tags: grub2
+  package:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ grub_remove_dependencies }}"
+
+- name: Create GRUB config
+  tags: grub2
+  template:
+    src: grub.j2
+    dest: "{{ grub_config_file }}"
+    owner: root
+    group: root
+    mode: 0644
+    lstrip_blocks: true
+    validate: bash -n %s
+  notify: update grub config
+  vars:
+    _grub_config: "{{ grub_config_defaults | combine(grub_config) }}"
+
+- name: Force update of GRUB config
+  command: /bin/true
+  notify: update grub config
+  when: grub_force_update

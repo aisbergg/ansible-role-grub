@@ -1,0 +1,10 @@
+---
+- name: Converge
+  hosts: all
+  vars:
+    grub_extra_dependencies: "{{ ['grub-btrfs'] if ansible_os_family == 'Archlinux' else [] }}"
+    grub_config:
+      GRUB_TIMEOUT: 10
+      GRUB_DISTRIBUTOR: Foo
+  roles:
+    - role: aisbergg.grub
