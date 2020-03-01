@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.0.1] - 2020-03-01
+### Removed
+- Unnecessary files
+
 ## [1.0.0] - 2020-02-28
 ### Added
 - First version of the role
