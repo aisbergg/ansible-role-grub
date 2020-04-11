@@ -12,7 +12,7 @@
   {%- endif %}
 {% endmacro %}
 
-{% for name, value in _grub_config.items() %}
+{% for name, value in cfg.items() %}
   {% if value is mapping %}
 
 {{ value.comment | default("") | comment(prefix_count=0, postfix_count=0) }}

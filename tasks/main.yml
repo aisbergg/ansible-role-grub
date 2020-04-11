@@ -34,7 +34,7 @@
     validate: bash -n %s
   notify: update grub config
   vars:
-    _grub_config: "{{ grub_config_defaults | combine(grub_config) }}"
+    cfg: "{{ grub_config_defaults | combine(grub_config) }}"
 
 - name: Force update of GRUB config
   command: /bin/true
