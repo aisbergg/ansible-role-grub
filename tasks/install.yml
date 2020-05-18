@@ -1,0 +1,14 @@
+---
+- name: Install dependencies
+  tags: grub2
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ __grub_dependencies + grub_extra_dependencies }}"
+
+- name: Remove unwanted dependencies
+  tags: grub2
+  package:
+    name: "{{ item }}"
+    state: absent
+  loop: "{{ grub_remove_dependencies }}"

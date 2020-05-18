@@ -2,10 +2,10 @@
 # defaults for Debian distributions
 
 # grub mkconfig binary
-grub_mkconfig_command: /usr/sbin/grub-mkconfig
+__grub_mkconfig_command: /usr/sbin/grub-mkconfig
 
 # defaults for grub config
-grub_config_defaults:
+__grub_config_defaults:
   GRUB_DEFAULT: 0
   GRUB_HIDDEN_TIMEOUT: 0
   GRUB_HIDDEN_TIMEOUT_QUIET: true

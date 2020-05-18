@@ -1,0 +1,18 @@
+---
+- name: Create GRUB config
+  tags: grub2
+  template:
+    src: grub.j2
+    dest: "{{ __grub_config_file }}"
+    owner: root
+    group: root
+    mode: 0644
+    validate: bash -n %s
+  notify: update grub config
+  vars:
+    cfg: "{{ __grub_config_defaults | combine(grub_config) }}"
+
+- name: Force update of GRUB config
+  command: /bin/true
+  notify: update grub config
+  when: grub_force_update
