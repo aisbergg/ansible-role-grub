@@ -10,8 +10,8 @@
 
 - name: include installation tasks
   tags: [grub2, grub2_install]
-  import_tasks: install.yml
+  ansible.builtin.import_tasks: install.yml
 
 - name: include configuration tasks
   tags: [grub2, grub2_config]
-  import_tasks: configure.yml
+  ansible.builtin.import_tasks: configure.yml
