@@ -23,7 +23,7 @@ None.
 
 ```yaml
 - hosts: all
-  vars: 
+  vars:
     grub_extra_dependencies:
       - grub-btrfs
     grub_config:
