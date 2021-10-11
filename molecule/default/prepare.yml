@@ -1,16 +1,16 @@
 ---
-- name: Prepare Debian Distributions
+- name: prepare Debian Distributions
   hosts: debian
   gather_facts: false
   tasks:
-    - name: Update package cache
-      raw: apt-get update
-    - name: Ensure Python is installed
-      raw: apt-get install -y python3
+    - name: update package cache
+      ansible.builtin.raw: apt-get update
+    - name: ensure Python is installed
+      ansible.builtin.raw: apt-get install -y python3
 
-- name: Prepare RedHat Distributions
+- name: prepare RedHat Distributions
   hosts: redhat
   gather_facts: false
   tasks:
-    - name: Ensure Python is installed
-      raw: yum install -y python36
+    - name: ensure Python is installed
+      ansible.builtin.raw: yum install -y python36
