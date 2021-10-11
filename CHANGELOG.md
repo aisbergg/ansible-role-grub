@@ -1,28 +1,69 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+- [2.0.0 (2021-10-11)](#200-2021-10-11)
+- [1.1.1 (2020-05-28)](#111-2020-05-28)
+- [1.1.0 (2020-05-18)](#110-2020-05-18)
+- [1.0.2 (2020-04-11)](#102-2020-04-11)
+- [1.0.1 (2020-03-01)](#101-2020-03-01)
 
-## [Unreleased]
+---
 
-## [1.1.1] - 2020-05-28
-### Changed
-- Clean up repo
+<a name="2.0.0"></a>
+## [2.0.0](https://github.com/aisbergg/ansible-role-grub/compare/v1.1.1...v2.0.0) (2021-10-11)
 
-## [1.1.0] - 2020-05-18
-### Changed
-- Clean up repo
+### CI Configuration
 
-## [1.0.2] - 2020-04-11
-### Changed
-- Correct required Ansible version
-- Replace `_grub_config` variable to reduce risk of name clash
+- add Github action for automatic releases
 
-## [1.0.1] - 2020-03-01
-### Removed
-- Unnecessary files
+### Chores
 
-## [1.0.0] - 2020-02-28
-### Added
-- First version of the role
+- update changelog
+- update development configs
+- **.pre-commit-config.yaml:** bump pre-commit hook versions
+- **CHANGELOG.tpl.md:** update changelog template
+
+### Code Refactoring
+
+- use full name
+- drop support for Ansible < 2.10
+
+
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/aisbergg/ansible-role-grub/compare/v1.1.0...v1.1.1) (2020-05-28)
+
+### Code Refactoring
+
+- clean up repo
+
+
+<a name="1.1.0"></a>
+## [1.1.0](https://github.com/aisbergg/ansible-role-grub/compare/v1.0.2...v1.1.0) (2020-05-18)
+
+### Code Refactoring
+
+- clean up
+
+
+<a name="1.0.2"></a>
+## [1.0.2](https://github.com/aisbergg/ansible-role-grub/compare/v1.0.1...v1.0.2) (2020-04-11)
+
+### Bug Fixes
+
+- correct Ansible version requirement
+
+### Chores
+
+- add bump2version config
+- update changelog
+
+### Features
+
+- rename _grub_config variable
+
+
+<a name="1.0.1"></a>
+## [1.0.1]() (2020-03-01)
+
+- Initial Release
