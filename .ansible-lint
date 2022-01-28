@@ -7,4 +7,3 @@ exclude_paths:
   - .cache/
   - .chglog/
   - .github/
-  - molecule/
